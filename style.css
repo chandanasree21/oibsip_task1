@@ -1,0 +1,137 @@
+
+body {
+    font-family: Arial,sans-serif;
+    background-color:skyblue;
+    background-image: linear-gradient(to bottom right, #7fd8ff, #b64369);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .calculator {
+    width: 250px;
+    margin: 0 auto;
+    padding: 25px;
+    padding-left: 20px;
+    background-color: #b64369,#7fd8ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1.0);
+  }
+  
+  .calculator input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 500px;
+  }
+  
+  .calculator .keypad-row {
+    display:flex;
+    justify-content: space-between;
+  }
+  
+  .calculator .key {
+    flex-basis: 100%; 
+    padding: 10px;
+    margin: 5px;
+    font-size: 18px;
+    text-align: center;
+    background-color:#b64369,#7fd8ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+   .calculator .key:hover {
+    background-color: #b64369,#7fd8ff;
+  } 
+   
+  .calculator .key.active {
+    background-color:#b64369,#7fd8ff;
+    transition: background-color 0.1s ease-in-out;
+  }
+  
+  
+  
+  #result {
+    width: 92%;
+    height: 20px;
+    font-size: 20px;
+    text-align: right;
+    margin-bottom: 10px;
+    padding-right: 5px;
+  }
+  
+  .keypad {
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+    text-align: center;
+  }
+  
+  .keypad button {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color:#b64369,#7fd8ff;
+    color: black;
+    border: 1px solid #ccc;
+  }
+  
+  .keypad button:nth-child(4n) {
+    margin-right: 0;
+  }
+  
+  .keypad button:nth-child(n+16) {
+    background-color: #f1f1f1;
+  }
+ 
+  @keyframes buttonPressAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  button:active {
+    animation: buttonPressAnimation 0.2s;
+  }
+  @keyframes displayFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #display {
+    animation: displayFadeIn 0.3s;
+  }
+  @keyframes buttonHoverAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  button:hover {
+    animation: buttonHoverAnimation 0.2s;
+  }
